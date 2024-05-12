@@ -14,13 +14,17 @@ export default function RootLayout({ children }: Readonly<{
   children: React.ReactNode;
 }>) {
   const params = useParams<{ id: string }>()
-
-  const userStringified = window.localStorage.getItem('user');
-  const user = userStringified ? JSON.parse(userStringified) : null;
-  const isAdminRole = user?.role === 'ADMIN';
-
+  let isAdminRole = false;
   const isTeamPage = params && params.id;
 
+  const localStorage = typeof window !== 'undefined' ? window.localStorage : null;
+
+  if(localStorage) {
+    const userStringified = localStorage.getItem('user');
+    const user = userStringified ? JSON.parse(userStringified) : null;
+    isAdminRole = user?.role === 'ADMIN';
+  }
+  
   return (
     <html lang="en">
       <body className={inter.variable}>

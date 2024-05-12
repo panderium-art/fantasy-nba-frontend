@@ -49,8 +49,8 @@ export default function TeamsPage() {
         {
           teamsData.map((team) => {
             return (
-              <Link href={`/teams/${team.id}`} passHref>
-                <TeamsCard key={team.id} {...team} />
+              <Link key={team.id} href={`/teams/${team.id}`} passHref>
+                <TeamsCard  {...team} />
               </Link>
             )
           })

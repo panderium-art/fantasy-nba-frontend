@@ -146,7 +146,7 @@ export const TeamForm: FC<TeamFormProps> = ({initialFormValues, isEdit = false, 
                 <Input placeholder="Team name" {...field} />
               </FormControl>
               <FormDescription>
-                Fill in team's name
+                Fill in team&apos;s name
               </FormDescription>
               <FormMessage />
             </FormItem>

@@ -54,7 +54,7 @@ export default function TeamsAdminPage({params}: {params: {id: string}}) {
     if (params.id) {
       fetchData();
     }
-  }, [])
+  }, [params.id])
 
   const isEditMode = !!params.id;
 
@@ -74,7 +74,7 @@ export default function TeamsAdminPage({params}: {params: {id: string}}) {
           <div className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold">Create Team</h2>
-              <p className="text-gray-500 dark:text-gray-400">Enter your new team's details</p>
+              <p className="text-gray-500 dark:text-gray-400">Enter your new team&apos;s details</p>
             </div>
             <TeamForm initialFormValues={formValues} isEdit={isEditMode} teamId={params.id} />
           </div>
